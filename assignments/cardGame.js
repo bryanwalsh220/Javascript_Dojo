@@ -31,10 +31,10 @@ class Effect {
     play(target) {
         if (this.stat === 'resilience') {
             target.resilience += this.magnitude;
-            console.log(`${this.name} was played against ${target.name}. ${target.name}'s reslience is now ${target.resilience}`)
+            console.log(`${this.name} was played on ${target.name}. ${target.name}'s reslience is now ${target.resilience}`)
         } else if (this.stat === "power") {
             target.power += this.magnitude;
-            console.log(`${this.name} was played against ${target.name}. ${target.name}'s power is now ${target.power}`)
+            console.log(`${this.name} was played on ${target.name}. ${target.name}'s power is now ${target.power}`)
         } else {
             console.log(`Invalid stat: ${this.stat}`)
         }

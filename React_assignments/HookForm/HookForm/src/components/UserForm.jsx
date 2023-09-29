@@ -2,6 +2,7 @@ import {useState} from "react";
 
 
 const UserForm = (props) => {
+    // Form Variables
     const [firstname, setFirstName] = useState("");
     const [lastname, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ const UserForm = (props) => {
     const [confirmpassword, setConfirmPassword] = useState("");
     const {users} = props
     const [allusers, setUsers] = useState(users)
+    // Error Variables
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
     const [firstNameError, setFirstNameError] = useState("");
     const [lastNameError, setLastNameError] = useState("");
@@ -62,34 +64,29 @@ const UserForm = (props) => {
     };
 
     const createUser = (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-		// I tried 2 different ways of having all my validations in one to halt the user from submitting the form
-		// without all the correct information
-		// but what the issue is that users can just submit a blank form because the validations are only checking length, etc. once they click in.
-		//implemented this quick check to see if there all fields are filled out 
-		if(!firstname || !lastname || !email || !password || !confirmpassword) {
-			alert("Please fill out all the fields");
-			return; //this specifically so that when the user goes to "submit the form - nothing else is executed."
-		}
-		
-
-
-    
-    if(!firstNameError && !lastNameError && !emailError && !passwordError && !confirmPasswordError) {
-        const newUser = {firstname, lastname, email, password, confirmpassword};
-            setFirstName("");
-            setLastName("");
-            setEmail("");
-            setPassword("");
-            setConfirmPassword("");
-            setHasBeenSubmitted(true);
-            setUsers([...allusers, newUser]);
-    } else {
-        alert("There is an error with your form, please fix before submitting")
-    }
-
-
+            // I tried 2 different ways of having all my validations in one to halt the user from submitting the form
+            // without all the correct information
+            // but what the issue is that users can just submit a blank form because the validations are only checking length, etc. once they click in.
+            //implemented this quick check to see if there all fields are filled out 
+        if(!firstname || !lastname || !email || !password || !confirmpassword) {
+            alert("Please fill out all the fields");
+            return; //this specifically so that when the user goes to "submit the form - nothing else is executed."
+            }
+            
+        if(!firstNameError && !lastNameError && !emailError && !passwordError && !confirmPasswordError) {
+            const newUser = {firstname, lastname, email, password, confirmpassword};
+                setFirstName("");
+                setLastName("");
+                setEmail("");
+                setPassword("");
+                setConfirmPassword("");
+                setHasBeenSubmitted(true);
+                setUsers([...allusers, newUser]);
+        } else {
+            alert("There is an error with your form, please fix before submitting")
+        }
 
     };
     return (

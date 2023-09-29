@@ -1,0 +1,25 @@
+:root {
+    --box-size: 100px;
+}
+
+.box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin:20px;
+}
+
+.boxItem {
+    width: var(--box-size);
+    height: var(--box-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid black;
+}
+
+.backgroundColor {
+    background-color: var(--box-color);
+    color: #ffffff;
+}

@@ -67,9 +67,3 @@ function partition(arr, left, right) {
     }
     return left;
 }
-
-(function test() {
-    var testArr1 = [5,7,12,11,66,17,9,4,1]
-
-    console.log(quickSort(testArr1))
-}) ()

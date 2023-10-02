@@ -1,0 +1,10 @@
+.todotaskitem {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;   
+}
+
+.btn {
+    border: 2px black solid;
+    background-color: tomato;
+}

@@ -1,4 +1,4 @@
-const Joke = require('../models/jokes.model');
+const {Joke} = require('../models/jokes.model');
 
 
 //create a joke
